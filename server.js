@@ -5,6 +5,10 @@ var config = require('./config');
 
 var app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(morgan('dev'));
+
 app.listen(config.port, function(err){
 	if(err) {
 		console.log(err);
