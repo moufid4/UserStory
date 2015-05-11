@@ -1,5 +1,5 @@
-var User = require(../models/user);
-var config = require(../../config);
+var User = require('../modules/user');
+var config = require('../../config');
 
 var secretKey = config.secretKey;
 
