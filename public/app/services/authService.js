@@ -50,7 +50,7 @@ angular.module('authService', [])
 	}
 
 	return authFactory;
-});
+})
 
 .factory('AuthInterceptor', function($q, $location, AuthToken) {
 	var interceptorFactory = {};
