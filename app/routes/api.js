@@ -74,6 +74,49 @@ module.exports = function(app, express) {
 		});
 	});
 
+	api.use(function(req, res, next){
+		console.log("somebody just logged in");
+		var token = req.body.token || req.param('token') || req.headers['x-access-token']
+
+		// check if token exists
+		if(token) {
+			jsonwebtoken.verify(token, secretKey, function(err, decoded){
+				if(err) {
+					res.status(403).send({ success: false, message: "failed to authenticate user"})
+				} else {
+					//
+					req.decoded = decoded;
+
+					next();
+				}
+			});
+
+		} else {
+			res.status(403).send({ success: false, message: "no token provided"});
+		}
+	});
+
+	// destination b, need to provide a legitamate token
+
+	api.get('/', function(req, res) {
+		res.json("Success!");
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	return api;
 }
 
