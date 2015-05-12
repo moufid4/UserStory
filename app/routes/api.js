@@ -51,6 +51,8 @@ module.exports = function(app, express) {
 	
 	});
 
+	//middleware
+
 	api.post('/login', function(req, res) {
 		User.findOne({ 
 			username: req.body.username
@@ -97,12 +99,13 @@ module.exports = function(app, express) {
 		}
 	});
 
-	// destination b, need to provide a legitamate token
+	// destination b, need to provide a legitimate token
 
 	// api.get('/', function(req, res) {
 	// 	res.json("Success!");
 	// });
 
+	//api for post and get new stories
 	api.route('/')
 
 		.post(function(req, res) {
@@ -127,6 +130,11 @@ module.exports = function(app, express) {
 				}
 				res.json(stories);
 			});
+		});
+
+		// api to athenticate in angular
+		api.get('/me', function(req, res) {
+			res.json(req.decoded);
 		})
 
 
