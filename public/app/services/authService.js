@@ -48,5 +48,7 @@ angular.module('authService', [])
 		else
 			$window.localStorage.removeItem('token');
 	}
+
+	return authFactory;
 });
 
