@@ -32,6 +32,8 @@ angular.module('authService', [])
 		else
 			return $q.reject({ message: "User has no token." });
 	}
+
+	return authFactory;
 })
 
 .factory('AuthToken', function($window) {
@@ -46,6 +48,5 @@ angular.module('authService', [])
 		else
 			$window.localStorage.removeItem('token');
 	}
-	
-	
-})
+});
+
