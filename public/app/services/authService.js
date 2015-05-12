@@ -13,6 +13,7 @@ angular.module('authService', [])
 			return data;
 		})
 	}
+
 	authFactory.logout = function() {
 		AuthTOken.setToken();
 	}
@@ -24,10 +25,27 @@ angular.module('authService', [])
 			return false;
 		}
 	}
+
 	authFactory.getUser = function() {
 		if(AuthToken.getToken())
 			return $http.get('/api/me');
 		else
 			return $q.reject({ message: "User has no token." });
 	}
+})
+
+.factory('AuthToken', function($window) {
+	var authFactory = {};
+	authTokenFactory.getToken = function() {
+		return $window.localStorage.getItem('token');
+	};
+
+	authTokenFactory.setToken = function(token) {
+		if(token)
+			$window.localStorage.setItem('token', token);
+		else
+			$window.localStorage.removeItem('token');
+	}
+	
+	
 })
