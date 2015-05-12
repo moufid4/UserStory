@@ -1,6 +1,6 @@
 angular.module('mainCtrl', [])
 
-.controller('MainController', function($rootScope, $location, Auth,) {
+.controller('MainController', function($rootScope, $location, Auth) {
 	var vm = this;
 	
 	vm.loggedIn = Auth.isLogged();
