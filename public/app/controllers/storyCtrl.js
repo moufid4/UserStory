@@ -19,7 +19,7 @@ angular.module('storyCtrl', ['storyService'])
 				//to clear up the form 
 				vm.storyData = '';
 				vm.message = data.message;
-				vm.stories.push(data);
+				
 			});
 		};
 
