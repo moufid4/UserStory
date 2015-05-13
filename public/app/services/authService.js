@@ -15,7 +15,7 @@ angular.module('authService', [])
 	}
 
 	authFactory.logout = function() {
-		AuthTOken.setToken();
+		AuthToken.setToken();
 	}
 
 	authFactory.isLoggedIn = function() {
