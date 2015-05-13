@@ -4,7 +4,7 @@ var morgan = require('morgan');
 var config = require('./config');
 var mongoose = require('mongoose');
 var http = require('http').Server(app);
-var io = require('io')(http);
+var io = require('socket.io')(http);
 
 var app = express();
 
