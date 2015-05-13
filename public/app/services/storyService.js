@@ -14,7 +14,7 @@ angular.module('storyService', [])
 	return storyFactory;
 })
 
-.factory('socket.io', function($rootScope) {
+.factory('socketio', function($rootScope) {
 	var socket = io.connect();
 	return {
 		on: function(eventName, callback) {
