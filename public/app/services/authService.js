@@ -1,6 +1,6 @@
 angular.module('authService', [])
 
-.factory('Auth', function($http, $q, $AuthToken){
+.factory('Auth', function($http, $q, AuthToken){
 	var authFactory = {};
 
 	authFactory.login = function(username, password) {
@@ -38,11 +38,11 @@ angular.module('authService', [])
 
 .factory('AuthToken', function($window) {
 	var authFactory = {};
-	authTokenFactory.getToken = function() {
+	authFactory.getToken = function() {
 		return $window.localStorage.getItem('token');
 	};
 
-	authTokenFactory.setToken = function(token) {
+	authFactory.setToken = function(token) {
 		if(token)
 			$window.localStorage.setItem('token', token);
 		else
