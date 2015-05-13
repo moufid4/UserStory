@@ -20,7 +20,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
 				<li ng-if="!main.loggedIn"><a href="/signup">Sign-up</a></li>
-				<li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.username }}</a></li>
+				<li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.name }}</a></li>
 				<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
 			</ul>
 		</div>
