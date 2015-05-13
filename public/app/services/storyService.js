@@ -3,11 +3,11 @@ angular.module('storyService', [])
 .factory('Story', function($http) {
 	var storyFactory = {}
 
-	storyFactory.createStory = function(storyData) {
+	storyFactory.create = function(storyData) {
 		return $http.post('/api', storyData);
 	}
 
-	storyFactory.getStory = function() {
+	storyFactory.allStory = function() {
 		return $http.get('/api');
 	}
 
