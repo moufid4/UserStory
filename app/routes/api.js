@@ -18,7 +18,20 @@ function createToken(user) {
 }
 
 module.exports = function(app, express, io) {
+
 	var api = express.Router();
+
+	api.get('/all_stories', function(req, res) {
+		Story.get({}, function(err, stories) {
+
+			if(err) {
+				res.send(err);
+				return;
+			}
+
+			res.json(stories);
+		});
+	});
 
 // api for signup
 	api.post('/signup', function(req, res) {
