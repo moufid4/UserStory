@@ -21,8 +21,9 @@ module.exports = function(app, express, io) {
 
 	var api = express.Router();
 
-	api.get('/all_stories', function(req, res) {
-		Story.get({}, function(err, stories) {
+	api.get('all_stories', function(req, res) {
+		
+		Story.find({}, function(err, stories) {
 
 			if(err) {
 				res.send(err);

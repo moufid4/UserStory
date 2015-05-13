@@ -23,7 +23,7 @@ angular.module('appRoutes', ['ngRoute'])
 				controllerAs: 'story',
 				resolve: {
 					stories: function(Story) {
-						return Story.allStories();
+						return Story.allStory();
 					}
 				}
 			})

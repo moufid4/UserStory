@@ -3,7 +3,7 @@ angular.module('storyService', [])
 .factory('Story', function($http) {
 	var storyFactory = {};
 
-	storyFactory.allStories = function() {
+	storyFactory.all = function() {
 		return $http.get('api/all_stories');
 	}
 
